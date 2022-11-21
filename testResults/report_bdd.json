@@ -1,0 +1,79 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "example;start-app-and-check-title",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Start app and check title",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 407942200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I start the application",
+            "match": {
+              "location": "file:\\C:\\_AutomationProjects\\playwright-coverage\\playwright-coverage\\e2e\\features\\step_definitions\\Example.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 522833499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I see it has a title",
+            "match": {
+              "location": "file:\\C:\\_AutomationProjects\\playwright-coverage\\playwright-coverage\\e2e\\features\\step_definitions\\Example.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44594200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 390100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 97766400
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@fixMe",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "example",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Example",
+    "tags": [],
+    "uri": "e2e\\features\\Example.feature"
+  }
+]

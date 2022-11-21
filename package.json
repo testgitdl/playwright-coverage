@@ -1,12 +1,15 @@
 {
   "name": "playwright-coverage",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test:only": "SET NODE_OPTIONS=--loader ts-node/esm --loader ./loader.js --no-warnings --experimental-specifier-resolution=node && node ./node_modules/@cucumber/cucumber/bin/cucumber.js --tags \"@fixMe\"",
+    "test": "start-server-and-test serve http://localhost:4200 test:only",
+    "test-with-coverage": "npx nyc --include './src/*.ts' --extension .ts --require ts-node/register --reporter=html --reporter=text --all npm run test"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +36,20 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.7.2"
+    "typescript": "~4.7.2",
+    "babel-plugin-istanbul": "^6.0.0",
+    "chai": "^4.3.6",
+    "nyc": "^15.1.0",
+    "playwright": "1.28.0",
+    "tsconfig-paths": "^4.1.0",
+    "ts-node": "^10.9.1",
+    "@types/chai": "^4.3.3",
+    "@types/node": "^16.11.48",
+    "@cucumber/cucumber": "8.7.0",
+    "@cucumber/pretty-formatter": "1.0.0",
+    "cucumber-console-formatter": "1.0.0",
+    "cucumber-html-reporter": "5.5.0",
+    "cucumber-junit-convert": "2.1.1",
+    "start-server-and-test": "^1.14.0"
   }
 }

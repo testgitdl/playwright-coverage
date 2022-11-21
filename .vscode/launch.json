@@ -1,20 +1,31 @@
 {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "pwa-chrome",
+      "name": "debug-only",
       "request": "launch",
-      "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
-    },
-    {
-      "name": "ng test",
-      "type": "chrome",
-      "request": "launch",
-      "preLaunchTask": "npm: test",
-      "url": "http://localhost:9876/debug.html"
+      "runtimeArgs": [
+        "./node_modules/@cucumber/cucumber/bin/cucumber.js",
+        "--tags",
+        "@fixMe",
+        "--config",
+        "./cucumber.js"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node",
+      "env": {
+        "DEBUG": "pw:api",
+        "PWDEBUG": "1",
+        "NODE_OPTIONS": "--loader ts-node/esm --loader ./loader.js --no-warnings --experimental-specifier-resolution=node",
+        "BROWSER": "chrome"
+      },
+      "console": "internalConsole",
+      "outputCapture": "std"
     }
   ]
 }
