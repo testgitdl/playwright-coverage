@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 407942200
+              "duration": 246296900
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 522833499
+              "duration": 1313046799
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 44594200
+              "duration": 38567699
             }
           },
           {
@@ -48,15 +48,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 390100
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 97766400
+              "duration": 119199
             }
           }
         ],

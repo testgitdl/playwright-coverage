@@ -10,9 +10,7 @@
       "runtimeArgs": [
         "./node_modules/@cucumber/cucumber/bin/cucumber.js",
         "--tags",
-        "@fixMe",
-        "--config",
-        "./cucumber.js"
+        "@fixMe"
       ],
       "skipFiles": [
         "<node_internals>/**"

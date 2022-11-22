@@ -2,6 +2,7 @@ import { BeforeAll, AfterAll, After, setDefaultTimeout, Status, Before } from "@
 import { chromium } from "playwright";
 import { Browser, Page, BrowserContext, webkit } from "playwright";
 import { mkdir, existsSync } from 'fs';
+import PuppeteerToIstanbul from 'puppeteer-to-istanbul';
 export let browser: Browser;
 export let page: Page;
 export let context: BrowserContext;
@@ -37,21 +38,27 @@ Before(async function () {
   consoleLogs = [];
   context = await browser.newContext();
   page = await context.newPage();
+  // await Promise.all([
+  //   page.coverage.startJSCoverage(),
+  //   page.coverage.startCSSCoverage()
+  // ]);
   await page.setViewportSize({ width: 1920, height: 1080 });
 });
 
 // close the browser
 AfterAll(async function () {
-  await browser?.close();
+  // const [jsCoverage, cssCoverage] = await Promise.all([
+  //   page.coverage.stopJSCoverage(),
+  //   page.coverage.stopCSSCoverage(),
+  // ]);
+
+  // console.log(jsCoverage);
+  // await PuppeteerToIstanbul.write([...jsCoverage, ...cssCoverage], { includeHostname: true, storagePath: './.nyc_output' });
+  await page.close();
+  await context.close();
+  await browser.close();
 });
 
-// Cleanup after each scenario
-After(async function () {
-  await Promise.all([
-    await page?.close(),
-    await context?.close()
-  ])
-});
 
 After(async function (scenario) {
   if (scenario.result.status === Status.FAILED) {
